@@ -9,7 +9,25 @@ import { HomeComponent } from './home/home.component';
 import { ImagesComponent } from './images/images.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
 import { LoginComponent } from './login/login.component';
+import {RouterModule,Routes} from '@angular/router';
 
+const appRoutes:Routes=[
+  {
+    path:"",component:IndexComponent
+  },
+  {
+    path:"home",component:HomeComponent
+  },
+  {
+    path:"images",component:ImagesComponent
+  },
+  {
+    path:"addtocart",component:AddtocartComponent
+  },
+  {
+    path:"login",component:LoginComponent
+  }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +40,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
